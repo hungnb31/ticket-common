@@ -11,6 +11,9 @@ export const errorHandler = (
     return res.status(err.statusCode).send({ errors: err.serializeErrors() });
   }
 
+  console.log("=======Error From Common========");
+  console.error(err);
+  console.log("================================");
   res.status(400).send({
     errors: [{ message: "Something went wrong" }],
   });
